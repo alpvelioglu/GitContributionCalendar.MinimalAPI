@@ -12,4 +12,4 @@ RUN dotnet publish --no-restore -c Release -o out /p:PublishAot=true
 FROM base AS final
 WORKDIR /app
 COPY --from=build /app/out .
-ENTRYPOINT ["dotnet", "GitContributionCalendar.MinimalAPI"]
+ENTRYPOINT ["dotnet", "GitContributionCalendar.MinimalAPI.dll"]
