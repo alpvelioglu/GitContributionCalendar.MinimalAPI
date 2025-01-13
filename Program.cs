@@ -18,7 +18,7 @@ namespace GitContributionCalendar.MinimalAPI
             builder.Services.AddOpenApi();
             builder.Services.AddHttpClient();
             builder.Services.AddCors();
-            builder.WebHost.UseKestrelHttpsConfiguration();
+            //builder.WebHost.UseKestrelHttpsConfiguration();
 
 
             builder.Services.ConfigureHttpJsonOptions(options =>
@@ -31,12 +31,10 @@ namespace GitContributionCalendar.MinimalAPI
 
             var app = builder.Build();
 
-            if (app.Environment.IsDevelopment())
-            {
-                app.MapOpenApi();
-                app.MapScalarApiReference();
-            }
-            app.UseHttpsRedirection();
+            app.MapOpenApi();
+            app.MapScalarApiReference();
+            
+            //app.UseHttpsRedirection();
             app.UseCors(builder =>
             {
                 builder.AllowAnyOrigin();

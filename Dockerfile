@@ -33,6 +33,5 @@ COPY --from=base /app .
 RUN chmod +x /app/GitContributionCalendar.MinimalAPI
 
 EXPOSE 8090
-EXPOSE 8091
 
 ENTRYPOINT ["./GitContributionCalendar.MinimalAPI"]
