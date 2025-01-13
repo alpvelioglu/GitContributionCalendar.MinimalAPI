@@ -9,7 +9,7 @@ RUN apt-get update \
 
 # Copy source and publish
 COPY . .
-RUN dotnet publish -r linux-musl-x64 -c Release \
+RUN dotnet publish -r linux-x64 -c Release \
     --self-contained true -p:PublishAot=true \
     -o /app GitContributionCalendar.MinimalAPI.csproj
 
