@@ -9,10 +9,6 @@
     <UserSecretsId>6cc801f2-c549-4d54-8ad1-43cf68d45584</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
     <DockerfileContext>.</DockerfileContext>
-	<StaticallyLinked>true</StaticallyLinked>
-	<StaticExecutable>true</StaticExecutable>
-	<IlcDisableReflection>true</IlcDisableReflection>
-	<StripSymbols>true</StripSymbols>
   </PropertyGroup>
 
   <ItemGroup>

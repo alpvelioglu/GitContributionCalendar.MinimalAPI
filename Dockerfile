@@ -21,9 +21,7 @@ COPY . .
 RUN dotnet publish -r linux-x64 -c Release \
     --self-contained true \
     -p:PublishAot=true \
-    -p:IlcDisableReflection=true \
     -p:OptimizationPreference=Size \
-    -p:StripSymbols=true \
     -p:LinkerFlavor=lld \
     -p:IlcInvariantGlobalization=true \
     -o /app GitContributionCalendar.MinimalAPI.csproj
