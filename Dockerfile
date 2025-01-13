@@ -20,7 +20,7 @@ RUN dotnet publish -o /app GitContributionCalendar.MinimalAPI.csproj
 
 FROM mcr.microsoft.com/dotnet/runtime-deps:9.0
 WORKDIR /app
-COPY --from=build /app .
+COPY --from=base /app .
 ENTRYPOINT ["/app/GitContributionCalendar.MinimalAPI"]
 
 #FROM base AS final
