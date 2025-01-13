@@ -27,3 +27,14 @@ RUN dotnet publish -r linux-x64 -c Release \
     -p:LinkerFlavor=lld \
     -p:IlcInvariantGlobalization=true \
     -o /app GitContributionCalendar.MinimalAPI.csproj
+
+FROM mcr.microsoft.com/dotnet/runtime-deps:9.0
+WORKDIR /app
+COPY --from=base /app .
+
+RUN chmod +x /app/GitContributionCalendar.MinimalAPI
+
+EXPOSE 8090
+EXPOSE 8091
+
+ENTRYPOINT ["./GitContributionCalendar.MinimalAPI"]
