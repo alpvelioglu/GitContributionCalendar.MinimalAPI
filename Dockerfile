@@ -12,6 +12,9 @@ RUN apt-get update \
        build-essential \
        binutils \
        lld \
+       gcc \
+       cmake \
+       libstdc++-11-dev \
     && rm -rf /var/lib/apt/lists/*
 
 COPY . .
@@ -20,9 +23,7 @@ RUN dotnet publish -r linux-x64 -c Release \
     -p:PublishAot=true \
     -p:IlcDisableReflection=true \
     -p:OptimizationPreference=Size \
+    -p:StripSymbols=true \
+    -p:LinkerFlavor=lld \
+    -p:IlcInvariantGlobalization=true \
     -o /app GitContributionCalendar.MinimalAPI.csproj
-
-FROM mcr.microsoft.com/dotnet/runtime-deps:9.0
-WORKDIR /app
-COPY --from=base /app .
-ENTRYPOINT ["/app/GitContributionCalendar.MinimalAPI"]
