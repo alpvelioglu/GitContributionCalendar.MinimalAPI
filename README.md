@@ -1,10 +1,10 @@
 # Git Contribution Calendar API  
 
-A high-performance **.NET 9 Minimal API** compiled with **NativeAOT**, providing Bitbucket specific data.
+A high-performance **.NET 9 Minimal API** compiled with **NativeAOT**, providing Bitbucket Server specific data.
 
 ## Purpose  
 
-This API was developed for [Git Contribution Calendar Angular](https://github.com/alpvelioglu/git-contribution-calendar-angular) to bypass Bitbucket's CORS policy.  
+This API was developed for [Git Contribution Calendar Angular](https://github.com/alpvelioglu/git-contribution-calendar-angular) to bypass Bitbucket Server's CORS policy.  
 
 If you prefer not to use this API, you can opt for Angular's proxy mechanism, which is available in [Git Contribution Calendar Angular](https://github.com/alpvelioglu/git-contribution-calendar-angular) repository.
 
